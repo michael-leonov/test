@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'PT Sans';
+		src: url('../fonts/PTSans-Regular.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Work Sans';
+		src: url('../fonts/WorkSans-Medium.ttf') format('truetype');
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Work Sans';
+		src: url('../fonts/WorkSans-Regular.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: 'Work Sans';
+		src: url('../fonts/WorkSans-ExtraLight.ttf') format('truetype');
+		font-weight: 200;
+	}
+
+	html {
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 400;
+	}
+
+	p {
+		@apply text-[#111];
+	}
+
+	label {
+		@apply text-[#7c7c7c] font-extralight text-xs leading-[1.1667];
+	}
+
+	input,
+	select {
+		@apply bg-transparent h-[23px] pb-[3px] text-[#111] text-sm leading-[1.142] border-b-[1px] border-[#F2F2F2] focus:outline-none;
+	}
+}
+
+@layer components {
+	.radio {
+		@apply border-[0.7px] border-[#5A61ED] checked:border-[#5A61ED];
+	}
+}
+
+@layer utilities {
+	select {
+		appearance: none;
+		background: url('../img/select-arrow.png') no-repeat right center;
+	}
+
+	input[type='email']:valid {
+		appearance: none;
+		background: url('/src/img/email-valid.png') no-repeat right center;
+	}
+
+	.radio:checked {
+		box-shadow: 0 0 0 1px hsl(0deg 0% 100%) inset,
+			0 0 0 2px hsl(0deg 0% 100%) inset;
+	}
+
+	.vertical-rl {
+		writing-mode: vertical-rl;
+	}
+
+	.main {
+		background: url('../img/back.png') no-repeat right bottom;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.field__error {
+		color: lightcoral;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.field__error_hidden {
+		display: none;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.field__input.invalid {
+		color: #f22;
+		border-color: #f22;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.animate__animated.animate__delay-6s {
+		animation-delay: 6s;
+	}
+
+	/* stylelint-disable-next-line selector-class-pattern */
+	.animate__animated.animate__delay-7s {
+		animation-delay: 7s;
+	}
+}
